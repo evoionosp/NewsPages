@@ -20,8 +20,11 @@ jobs:
             java-version: 17
             distribution: 'oracle'
 
+        - name: Make gradlew executable
+          run: chmod +x ./gradlew
+
         - name: Build with Gradle
-          run: ./gradlew build
+          run: ./gradlew clean build
 
         - name: Upload a Build Artifact
           uses: actions/upload-artifact@v4.3.1
